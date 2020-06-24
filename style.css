@@ -1,4 +1,36 @@
-a {
-    color: rgb(255, 0, 0);
+body {
+        font-family: fantasy;
+        color: rgb(199, 177, 14);
+}
+h1{
+    position: fixed;
+}
+#hopper{
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    height: 300px;
+    z-index: 3;
+} 
+#landscape{
+    position:-ms-page;
+    left: 400px;
+    height: 700px;
+    z-index: 1;
+}  
+#winston{
+    position: absolute;
+    top: 250px;
+    left: 550px;
+    height: 300px;
+    z-index: 2; 
+    transition: top 1s;
+}
+#coolhopper{
+    position: absolute;
+    top: 300px;
+    height: 250px;
+    left: 270px;
+    z-index: 4;
 }
 
