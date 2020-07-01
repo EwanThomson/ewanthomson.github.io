@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+#grid{
+    
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#grid .cell{
+    width: 75px;
+    height: 75px;
+    border: 1px solid #000;
+
+}
+#grid .cell.blue{
+    background-color: blue;
+}
+#grid .cell.orange{
+    background-color: orange;
+}
