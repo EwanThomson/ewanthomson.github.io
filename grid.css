@@ -11,7 +11,7 @@
 #grid .cell{
     width: 75px;
     height: 75px;
-    border: 1px solid #000;
+    border: 0px solid #000;
 
 }
 #grid .cell.blue{
@@ -19,4 +19,13 @@
 }
 #grid .cell.orange{
     background-color: orange;
+}
+/*#grid img{
+    width: 75px;
+    height: 75px;
+    position: absolute;
+}*/
+#grid .cell.rainbow{
+    background-image: url(rainbow-square.png);
+    background-size: contain;
 }
