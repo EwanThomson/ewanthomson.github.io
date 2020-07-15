@@ -3,7 +3,7 @@
 }
 #grid{
     
-    width: 640px;
+    width: 800px;
     height: 640px;
     display: flex;
     flex-wrap: wrap;

@@ -1,25 +1,19 @@
-var size = 8;
 "use strict";
+var width = 10;
+var height = 8;
 var grid =document.querySelector("#grid");
-for (let row = 0; row < size; row++) {
-    var blue=row%2==0;
-    for (let col = 0; col < size; col++) {
-        var div=document.createElement("div");
-        div.classList.add("cell")
-        if (blue){
-            div.classList.add("blue") 
-            blue=false;
-        }else{
-           div.classList.add("orange")
-           blue=true; 
-        }
-        grid.append(div)
-    }
+for (let row = 0; row < height*width; row++) {
+
+    var div=document.createElement("div");
+    div.classList.add("cell")
+    div.classList.add("blue")
+    grid.append(div)
+    
 }
 
 
 
-var rainbow=63;
+var rainbow=79;
 grid.children[rainbow].classList.add("rainbow")
 window.addEventListener("keydown",(e)=>{
     var newRainbow = null; 
@@ -28,9 +22,9 @@ window.addEventListener("keydown",(e)=>{
     }else if(e.key=="ArrowRight"){
         newRainbow=rainbow+1
     }else if(e.key=="ArrowUp"){
-        newRainbow=rainbow-size
+        newRainbow=rainbow-width
     }else if(e.key=="ArrowDown"){
-        newRainbow=rainbow+size
+        newRainbow=rainbow+width
     }
 
     if (newRainbow!=null){
