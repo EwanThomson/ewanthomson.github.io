@@ -3,14 +3,14 @@
 }
 #grid{
     
-    width: 600px;
-    height: 600px;
+    width: 640px;
+    height: 640px;
     display: flex;
     flex-wrap: wrap;
 }
 #grid .cell{
-    width: 75px;
-    height: 75px;
+    width: 80px;
+    height: 80px;
     border: 0px solid #000;
 
 }
@@ -20,11 +20,9 @@
 #grid .cell.orange{
     background-color: orange;
 }
-/*#grid img{
-    width: 75px;
-    height: 75px;
-    position: absolute;
-}*/
+#grid .cell.red{
+    background-color: red;
+}
 #grid .cell.rainbow{
     background-image: url(rainbow-square.png);
     background-size: contain;
