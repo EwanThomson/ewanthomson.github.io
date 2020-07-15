@@ -25,32 +25,11 @@ window.addEventListener("keydown",(e)=>{
     var newRainbow = null; 
     if(e.key=="ArrowLeft"){
         newRainbow=rainbow-1
-    }
-
-    if (newRainbow!=null){
-        grid.children[rainbow].classList.remove("rainbow")
-        rainbow=newRainbow
-        grid.children[rainbow].classList.add("rainbow")
-    }
-    if(e.key=="ArrowRight"){
+    }else if(e.key=="ArrowRight"){
         newRainbow=rainbow+1
-    }
-
-    if (newRainbow!=null){
-        grid.children[rainbow].classList.remove("rainbow")
-        rainbow=newRainbow
-        grid.children[rainbow].classList.add("rainbow")
-    }
-    if(e.key=="ArrowUp"){
+    }else if(e.key=="ArrowUp"){
         newRainbow=rainbow-size
-    }
-
-    if (newRainbow!=null){
-        grid.children[rainbow].classList.remove("rainbow")
-        rainbow=newRainbow
-        grid.children[rainbow].classList.add("rainbow")
-    }
-    if(e.key=="ArrowDown"){
+    }else if(e.key=="ArrowDown"){
         newRainbow=rainbow+size
     }
 
