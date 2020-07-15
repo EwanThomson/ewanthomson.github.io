@@ -33,3 +33,34 @@ window.addEventListener("keydown",(e)=>{
         grid.children[rainbow].classList.add("rainbow")
     }
 })
+function start (){
+    var meteorTypes=[
+        {
+            start: function(){return 20},
+            end: function(pos){return pos % width == width -1},
+            delta: 1,
+        },
+        {
+            start: function(){return 2},
+            end: function(pos){return pos > width*(height-1)},
+            delta: width,
+        },
+];
+    var meteor=null
+    var meteorType= null
+    setInterval(()=>{
+        if (meteor==null){
+            meteorType=meteorTypes[Math.floor(Math.random()*meteorTypes.length)]
+            meteor=meteorType.start()
+            grid.children[meteor].classList.add("red")
+        }else{
+            grid.children[meteor].classList.remove("red")
+            meteor+=meteorType.delta
+            if(meteorType.end(meteor)){
+                meteor=null;
+            }
+            grid.children[meteor].classList.add("red")
+        }
+    },500)
+}
+start()
