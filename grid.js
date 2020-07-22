@@ -36,14 +36,24 @@ window.addEventListener("keydown",(e)=>{
 function start (){
     var meteorTypes=[
         {
-            start: function(){return 20},
+            start: function(){return Math.floor(Math.random()*height)*width},
             end: function(pos){return pos % width == width -1},
             delta: 1,
         },
         {
-            start: function(){return 2},
+            start: function(){return Math.floor(Math.random()*width)},
             end: function(pos){return pos > width*(height-1)},
             delta: width,
+        },
+        {
+            start: function(){return Math.floor(Math.random()*width)+(height-1)*width},
+            end: function(pos){return pos < width},
+            delta: -width,
+        },
+        {
+            start: function(){return Math.floor(Math.random()*height)*width+width-1},
+            end: function(pos){return pos % width == 0},
+            delta: -1,
         },
 ];
     var meteor=null
@@ -53,14 +63,14 @@ function start (){
             meteorType=meteorTypes[Math.floor(Math.random()*meteorTypes.length)]
             meteor=meteorType.start()
             grid.children[meteor].classList.add("red")
+        }else if(meteorType.end(meteor)){
+            grid.children[meteor].classList.remove("red")  
+            meteor=null;
         }else{
             grid.children[meteor].classList.remove("red")
             meteor+=meteorType.delta
-            if(meteorType.end(meteor)){
-                meteor=null;
-            }
             grid.children[meteor].classList.add("red")
         }
-    },500)
+    },250)
 }
 start()
