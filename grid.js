@@ -55,21 +55,26 @@ function start (){
             end: function(pos){return pos % width == 0},
             delta: -1,
         },
-];
-    var meteor=null
-    var meteorType= null
+    ];
+    var meteors =[null,null,null,null,]
     setInterval(()=>{
-        if (meteor==null){
-            meteorType=meteorTypes[Math.floor(Math.random()*meteorTypes.length)]
-            meteor=meteorType.start()
-            grid.children[meteor].classList.add("red")
-        }else if(meteorType.end(meteor)){
-            grid.children[meteor].classList.remove("red")  
-            meteor=null;
-        }else{
-            grid.children[meteor].classList.remove("red")
-            meteor+=meteorType.delta
-            grid.children[meteor].classList.add("red")
+        for (let index = 0; index < meteors.length; index++) {
+            const element = meteors[index];
+            
+        
+            if (element==null){
+                var meteorType=meteorTypes[Math.floor(Math.random()*meteorTypes.length)]
+                var meteor=meteorType.start()
+                meteors[index]={meteor,meteorType}
+                grid.children[meteor].classList.add("red")
+            }else if(element.meteorType.end(element.meteor)){
+                grid.children[element.meteor].classList.remove("red")  
+                meteors[index]=null;
+            }else{
+                grid.children[element.meteor].classList.remove("red")
+                element.meteor+=element.meteorType.delta
+                grid.children[element.meteor].classList.add("red")
+            }
         }
     },250)
 }
