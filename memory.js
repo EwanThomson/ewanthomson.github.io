@@ -3,7 +3,7 @@ var width = 4;
 var height = 3;
 var grid =document.querySelector("#grid");
 var cards = []
-var revealed = ["hotdog","hotdog"]
+var revealed = ["hotdog","hotdog","fries","milkshake","pizza","ice-cream","milkshake","cheeseburger","ice-cream","cheeseburger","pizza","fries"]
 for (let i = 0; i < height*width; i++) {
     var div=document.createElement("div");
     div.classList.add("cell")
