@@ -12,6 +12,22 @@ while (doubled.length>0) {
     doubled.splice(index,1)
 }
 
+var firstCard = null;
+function onclick(e){
+    if (e.target.style.backgroundImage) {
+       return 
+    }
+    e.target.style.backgroundImage="url(memory/"+e.target.dataset.reveal+".png)"
+    if (firstCard == null){
+        firstCard = e.target
+    }else{
+        if (e.target.dataset.reveal!==firstCard.dataset.reveal) {
+            e.target.style.backgroundImage=""
+            firstCard.style.backgroundImage=""
+        }
+        firstCard=null
+    }
+}
 
 var width = 4;
 var height = 3;
@@ -23,9 +39,7 @@ for (let i = 0; i < height*width; i++) {
     div.dataset.reveal=revealed[i]
     grid.append(div)
     cards.push(div)
-    div.addEventListener("click",(e)=>{
-        e.target.style.backgroundImage="url(memory/"+e.target.dataset.reveal+".png)"
-    })
+    div.addEventListener("click",onclick)
 }
 
 
