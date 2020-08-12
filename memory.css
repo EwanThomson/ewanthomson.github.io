@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 #grid{
-    
     width: 320px;
     height: 240px;
     display: flex;
@@ -12,5 +11,9 @@
     width: 80px;
     height: 80px;
     border: 1px solid #000;
-    background-size: contain;
+}
+#grid .cell img {
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
